@@ -1202,3 +1202,78 @@ body {
     text-align: center;
   }
 }
+
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+.container,
+.hero-content,
+.featured-movie-section,
+section {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  box-sizing: border-box;
+}
+
+h1, .hero-title {
+  font-size: clamp(1.75rem, 5vw, 3rem) !important;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+h2 {
+  font-size: clamp(1.3rem, 4vw, 2.2rem) !important;
+  line-height: 1.25;
+  word-break: break-word;
+}
+
+p, .hero-description {
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
+  line-height: 1.5;
+}
+
+.hero-buttons,
+.cta-group,
+.hp-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.hero-buttons .hp-btn,
+.cta-group button {
+  max-width: 100%;
+  white-space: normal;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .hero-buttons,
+  .cta-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-buttons .hp-btn,
+  .cta-group button {
+    width: 100%;
+    text-align: center;
+  }
+}
