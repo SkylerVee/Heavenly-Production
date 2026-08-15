@@ -14,8 +14,19 @@
   --hp-glow: 0 0 20px rgba(229, 184, 105, 0.2);
 }
 
-body {
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
   margin: 0;
+  padding: 0;
+}
+
+body {
   background-color: var(--hp-bg);
   color: var(--hp-text);
   font-family: 'Montserrat', sans-serif;
@@ -36,7 +47,6 @@ body {
   top: 0;
   z-index: 100;
   backdrop-filter: blur(12px);
-  box-sizing: border-box;
 }
 
 .hp-logo-box {
@@ -44,6 +54,7 @@ body {
   align-items: center;
   gap: 0.75rem;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .hp-brand-logo {
@@ -63,6 +74,7 @@ body {
   margin: 0;
   text-shadow: 0 0 10px rgba(229, 184, 105, 0.3);
   line-height: 1.1;
+  white-space: nowrap;
 }
 
 .hp-brand-sub {
@@ -76,6 +88,7 @@ body {
 .hp-nav {
   display: flex;
   gap: 1.25rem;
+  align-items: center;
 }
 
 .hp-nav button {
@@ -88,6 +101,7 @@ body {
   transition: all 0.3s ease;
   padding: 0.3rem 0;
   position: relative;
+  white-space: nowrap;
 }
 
 .hp-nav button:hover, .hp-nav button.active {
@@ -108,6 +122,12 @@ body {
 .hp-nav-actions {
   display: flex;
   gap: 0.75rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.hp-hamburger-btn {
+  display: none;
 }
 
 .hp-icon-btn {
@@ -122,6 +142,8 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
+  width: 36px;
+  height: 36px;
 }
 
 .hp-icon-btn:hover {
@@ -156,7 +178,6 @@ body {
   padding: 1rem 2.5rem;
   z-index: 99;
   backdrop-filter: blur(8px);
-  box-sizing: border-box;
 }
 
 .hp-search-box {
@@ -185,11 +206,15 @@ body {
 .hp-main {
   flex: 1;
   padding: 2rem 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .hp-hero {
   position: relative;
   height: 60vh;
+  min-height: 400px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: var(--hp-shadow);
@@ -214,21 +239,25 @@ body {
 
 .hp-hero-overlay h2 {
   font-family: 'Cinzel', serif;
-  font-size: 3rem;
+  font-size: clamp(2rem, 4vw, 3.5rem);
   color: var(--hp-gold);
   margin-bottom: 0.75rem;
+  line-height: 1.1;
 }
 
 .hp-hero-overlay p {
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
   max-width: 600px;
   margin-bottom: 1.5rem;
   color: var(--hp-text-muted);
+  line-height: 1.5;
 }
 
 .hp-hero-btns {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .hp-btn {
@@ -244,6 +273,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 0.5px;
   font-size: 0.85rem;
+  white-space: nowrap;
 }
 
 .hp-btn-primary {
@@ -261,7 +291,6 @@ body {
   background: transparent;
   border: 1px solid var(--hp-gold);
   color: var(--hp-gold);
-  margin-left: 1rem;
 }
 
 .hp-btn-secondary:hover {
@@ -273,7 +302,6 @@ body {
   background: rgba(19, 17, 26, 0.8);
   border: 1px solid var(--hp-border);
   color: var(--hp-text);
-  margin-left: 1rem;
   padding: 0.7rem;
 }
 
@@ -283,7 +311,7 @@ body {
 
 .hp-section h2 {
   font-family: 'Cinzel', serif;
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
   color: var(--hp-gold);
   margin-bottom: 1.5rem;
 }
@@ -295,6 +323,7 @@ body {
   font-weight: 600;
   display: block;
   margin-bottom: 0.5rem;
+  font-size: 0.85rem;
 }
 
 .hp-slider-wrapper {
@@ -425,6 +454,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  width: 100%;
 }
 
 .hp-card-actions .hp-btn {
@@ -578,6 +608,7 @@ body {
   display: flex;
   gap: 1rem;
   max-width: 500px;
+  margin: 0 auto;
 }
 
 .hp-form-inline input, .hp-contact-form input, .hp-contact-form textarea, .hp-admin-form input, .hp-admin-form textarea, .hp-admin-form select, .hp-auth-form input {
@@ -587,7 +618,6 @@ body {
   padding: 0.8rem 1rem;
   border-radius: 4px;
   width: 100%;
-  box-sizing: border-box;
 }
 
 .hp-form-inline input:focus, .hp-contact-form input:focus, .hp-contact-form textarea:focus, .hp-admin-form input:focus, .hp-admin-form textarea:focus, .hp-admin-form select:focus, .hp-auth-form input:focus {
@@ -615,6 +645,7 @@ body {
   gap: 1rem;
   align-items: center;
   margin: 2rem 0;
+  flex-wrap: wrap;
 }
 
 .hp-filter-btn {
@@ -842,6 +873,9 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin-bottom: 2rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hp-footer-links {
@@ -859,7 +893,6 @@ body {
   padding-top: 1.5rem;
 }
 
-/* Downloads Page Styles */
 .hp-downloads-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -1018,7 +1051,6 @@ body {
   color: var(--hp-text-muted);
 }
 
-/* Auth & Admin Panel Styling */
 .hp-auth-container {
   max-width: 400px;
   margin: 4rem auto;
@@ -1088,7 +1120,6 @@ body {
   padding: 2rem;
   border: 1px solid var(--hp-border);
   border-radius: 8px;
-
 }
 
 .hp-admin-list {
@@ -1099,7 +1130,6 @@ body {
   border-radius: 8px;
 }
 
-/* Player Screen Styling */
 .hp-watch-container {
   max-width: 1000px;
   margin: 0 auto;
@@ -1128,7 +1158,6 @@ body {
   color: var(--hp-text-muted);
 }
 
-/* Mobile Nav Drawer */
 .hp-mobile-nav {
   position: fixed;
   top: 70px;
@@ -1191,6 +1220,16 @@ body {
   .hp-main {
     padding: 1.5rem 1rem;
   }
+  .hp-hero-overlay {
+    padding: 1.5rem;
+  }
+  .hp-hero-btns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hp-hero-btns .hp-btn {
+    width: 100%;
+  }
   .hp-movie-grid-showcase, .hp-cast-grid-showcase {
     grid-template-columns: 1fr;
   }
@@ -1201,79 +1240,7 @@ body {
     flex-direction: column;
     text-align: center;
   }
-}
-
-html, body {
-  width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-
-.container,
-.hero-content,
-.featured-movie-section,
-section {
-  width: 100% !important;
-  max-width: 100% !important;
-  padding-left: 1rem !important;
-  padding-right: 1rem !important;
-  box-sizing: border-box;
-}
-
-h1, .hero-title {
-  font-size: clamp(1.75rem, 5vw, 3rem) !important;
-  line-height: 1.2;
-  word-break: break-word;
-}
-
-h2 {
-  font-size: clamp(1.3rem, 4vw, 2.2rem) !important;
-  line-height: 1.25;
-  word-break: break-word;
-}
-
-p, .hero-description {
-  font-size: clamp(0.9rem, 3vw, 1.1rem);
-  line-height: 1.5;
-}
-
-.hero-buttons,
-.cta-group,
-.hp-card-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  width: 100%;
-}
-
-.hero-buttons .hp-btn,
-.cta-group button {
-  max-width: 100%;
-  white-space: normal;
-}
-
-@media screen and (max-width: 768px) {
-  body {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .hero-buttons,
-  .cta-group {
+  .hp-form-inline {
     flex-direction: column;
-    align-items: stretch;
-  }
-
-  .hero-buttons .hp-btn,
-  .cta-group button {
-    width: 100%;
-    text-align: center;
   }
 }
