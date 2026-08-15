@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heavenly Production - Stories with a Soul</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hp-header">
+    <div class="hp-logo-box" id="logo-btn">
+      <img src="https://picsum.photos/seed/heavenlylogo/50/50" alt="Logo" class="hp-brand-logo" />
+      <div>
+        <h1 class="hp-brand-title">HEAVENLY PRODUCTION</h1>
+        <span class="hp-brand-sub">Stories with a Soul</span>
+      </div>
+    </div>
+    <nav class="hp-nav">
+      <button class="nav-btn active" data-page="Home">Home</button>
+      <button class="nav-btn" data-page="About-Us">About Us</button>
+      <button class="nav-btn" data-page="Movies">Movies</button>
+      <button class="nav-btn" data-page="Behind-the-Scenes">Behind the Scenes</button>
+      <button class="nav-btn" data-page="Cast-Crew">Cast & Crew</button>
+      <button class="nav-btn" data-page="Journal">News/Journal</button>
+      <button class="nav-btn" data-page="Contact">Contact</button>
+      <button class="nav-btn" data-page="Downloads" id="downloads-nav-btn" style="display: none;">Downloads</button>
+    </nav>
+    <div class="hp-nav-actions">
+      <button class="hp-icon-btn" id="search-toggle-btn" aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      </button>
+      <button class="hp-icon-btn" id="cart-btn" aria-label="Cart">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        <span class="hp-cart-badge" id="cart-count" style="display: none;">0</span>
+      </button>
+      <button class="hp-icon-btn hp-hamburger-btn" id="hamburger-btn" aria-label="Menu" style="display: none;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+      <button class="hp-icon-btn" id="login-btn" aria-label="Account">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="hp-search-overlay" id="search-overlay" style="display: none;">
+    <div class="hp-search-box">
+      <input type="text" id="search-input" placeholder="Search films, crew, topics..." />
+      <button class="hp-icon-btn" id="close-search-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+  </div>
+
+  <main class="hp-main" id="main-content">
+
+    <div id="page-Home" class="hp-page">
+      <section class="hp-hero">
+        <video id="hero-video" class="hp-hero-video" autoplay loop muted src="https://www.w3schools.com/html/mov_bbb.mp4"></video>
+        <div class="hp-hero-overlay">
+          <h2>Every Story Has a Soul.</h2>
+          <p>Heavenly Production tells the human stories behind the headlines: Kenyan lives, Kenyan journeys, told with heart.</p>
+          <div class="hp-hero-btns">
+            <button class="hp-btn hp-btn-primary nav-direct" data-page="Movies">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>
+              Shop Movies
+            </button>
+            <button class="hp-btn hp-btn-secondary nav-direct" data-page="Movies">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              Watch Trailers
+            </button>
+            <button class="hp-btn hp-btn-toggle" id="sound-toggle">
+              <svg id="sound-icon-off" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+              <svg id="sound-icon-on" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="hp-section hp-featured">
+        <span class="hp-eyebrow">Now Showing</span>
+        <h2 id="featured-title">The Silence before Dawn</h2>
+        <p class="hp-featured-body">
+          A story about what it costs to hope. Follow protagonist as they navigate complex internal conflicts. Now available to own.
+        </p>
+        <div class="hp-featured-cta">
+          <button class="hp-btn hp-btn-primary" id="featured-buy-btn">Buy Now KES 500</button>
+          <button class="hp-btn hp-btn-secondary" id="featured-trailer-btn">Watch Trailer</button>
+        </div>
+      </section>
+
+      <section class="hp-section">
+        <h2>Films Built Around People, Not Plot.</h2>
+        <div class="hp-slider-wrapper">
+          <button class="hp-slider-arrow left" id="slide-left" aria-label="Slide left">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <div class="hp-movie-slider" id="home-movie-slider"></div>
+          <button class="hp-slider-arrow right" id="slide-right" aria-label="Slide right">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+      </section>
+
+      <section class="hp-section hp-about-snapshot">
+        <h2>Who We Are</h2>
+        <p>
+          Heavenly Production is a Kenyan film house built on one belief: the truest stories are the quiet ones: a mother's choice, a son's return, a stranger's kindness. We make films that follow the inner journey of our characters as closely as the outer one. Based in Nairobi, built for the world.
+        </p>
+        <button class="hp-btn hp-btn-secondary nav-direct" data-page="About-Us">Learn Our Story</button>
+      </section>
+
+      <section class="hp-section hp-newsletter">
+        <h2>Join the Journey.</h2>
+        <p>Be first to know when a new film drops, watch behind-the-scenes footage, and get early access pricing.</p>
+        <form class="hp-form-inline" id="newsletter-form">
+          <input type="email" placeholder="Enter your email address" required />
+          <button type="submit" class="hp-btn hp-btn-primary">Subscribe</button>
+        </form>
+      </section>
+
+      <section class="hp-section hp-testimonials">
+        <h2>What People Are Saying</h2>
+        <div class="hp-grid-3">
+          <div class="hp-testimonial-card">
+            <div class="hp-stars">★★★★★</div>
+            <p>"Extremely moving narratives. A masterclass in authentic visual storytelling."</p>
+            <span>Wanjiru K.</span>
+          </div>
+          <div class="hp-testimonial-card">
+            <div class="hp-stars">★★★★★</div>
+            <p>"Captures the true emotional heartbeat of Kenyan communities."</p>
+            <span>Omondi A.</span>
+          </div>
+          <div class="hp-testimonial-card">
+            <div class="hp-stars">★★★★★</div>
+            <p>"Unmatched cinematic depth and unforgettable character arcs."</p>
+            <span>Kipchumba T.</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div id="page-About-Us" class="hp-page" style="display:none;">
+      <section class="hp-hero-banner">
+        <h2>Heavenly Production</h2>
+        <p>A Kenyan story house, telling the world what it feels like to be human here.</p>
+      </section>
+      <section class="hp-section">
+        <h2>Why We Make Films</h2>
+        <p>
+          Heavenly Production was founded on a simple conviction: that emotional truth travels farther than special effects. We are a Nairobi-based media house that develops, produces, and distributes films centered on character: people caught between duty and desire, tradition and change, fear and hope. Our stories are Kenyan at the root, but universal in the questions they ask. We don't just follow what happens to our characters. We follow who they become.
+        </p>
+      </section>
+      <section class="hp-section">
+        <h2>Our Mission</h2>
+        <p>
+          To create films that move people: not just entertain them. To give Kenyan stories a global stage, told with craft, patience, and emotional honesty.
+        </p>
+      </section>
+      <section class="hp-section">
+        <h2>Our Values</h2>
+        <div class="hp-grid-3">
+          <div class="hp-value-box">
+            <h3>1. Character First</h3>
+            <p>Every story begins with a person, not a plot twist.</p>
+          </div>
+          <div class="hp-value-box">
+            <h3>2. Emotional Depth</h3>
+            <p>We take our time with feeling. No shortcuts to the heart.</p>
+          </div>
+          <div class="hp-value-box">
+            <h3>3. Authentic Kenya</h3>
+            <p>Our settings, language, and texture are ours, unapologetically.</p>
+          </div>
+        </div>
+      </section>
+      <section class="hp-section">
+        <h2>Meet the Founders</h2>
+        <div class="hp-founders-grid" id="founders-grid"></div>
+      </section>
+      <section class="hp-section hp-cta-strip">
+        <h2>Want to see the stories for yourself?</h2>
+        <button class="hp-btn hp-btn-primary nav-direct" data-page="Movies">Browse Our Films</button>
+      </section>
+    </div>
+
+    <div id="page-Movies" class="hp-page" style="display:none;">
+      <div id="movies-catalog-view">
+        <section class="hp-header-block">
+          <h2>Own the Stories.</h2>
+          <p>Every film, available to purchase and stream on your own time.</p>
+          <div class="hp-filter-bar" id="genre-filter-bar">
+            <span>Filter:</span>
+            <button class="hp-filter-btn active" data-genre="All">All</button>
+            <button class="hp-filter-btn" data-genre="Drama">Drama</button>
+            <button class="hp-filter-btn" data-genre="Romance">Romance</button>
+            <button class="hp-filter-btn" data-genre="Family">Family</button>
+          </div>
+        </section>
+        <div class="hp-movie-grid-showcase" id="movies-catalog-grid"></div>
+      </div>
+
+      <div id="movies-detail-view" style="display:none;">
+        <button class="hp-btn hp-btn-secondary" id="back-to-movies-btn">← Back to Movies</button>
+        <h2 id="detail-title"></h2>
+        <p class="hp-tagline" id="detail-hook"></p>
+        <div class="hp-trailer-container">
+          <video controls id="detail-video-player" class="hp-trailer-player" src=""></video>
+        </div>
+        <div class="hp-detail-layout">
+          <div class="hp-synopsis-block">
+            <h3>Synopsis</h3>
+            <p id="detail-synopsis"></p>
+            <h3>Behind the Scenes Gallery</h3>
+            <div class="hp-gallery-grid" id="detail-gallery-grid"></div>
+          </div>
+          <div class="hp-panel-details">
+            <h3>Details</h3>
+            <p><strong>Genre:</strong> <span id="detail-genre"></span></p>
+            <p><strong>Runtime:</strong> <span id="detail-runtime"></span></p>
+            <p><strong>Language:</strong> <span id="detail-language"></span></p>
+            <p><strong>Release Date:</strong> <span id="detail-year"></span></p>
+            <p><strong>Director:</strong> <span id="detail-director"></span></p>
+            <p><strong>Cast:</strong> <span id="detail-cast"></span></p>
+            <p class="hp-panel-price" id="detail-price"></p>
+            <div class="hp-panel-actions">
+              <button class="hp-btn hp-btn-secondary" id="detail-add-cart-btn">Add to Cart</button>
+              <button class="hp-btn hp-btn-primary" id="detail-buy-now-btn">Buy Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="hp-related-section">
+          <h3>You Might Also Like</h3>
+          <div class="hp-grid-3" id="detail-related-grid"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="page-Behind-the-Scenes" class="hp-page" style="display:none;">
+      <section class="hp-header-block">
+        <h2>Inside the Story</h2>
+        <p>The making of every Heavenly Production film: the people, the process, the moments the camera didn't catch.</p>
+      </section>
+      <div class="hp-feed" id="bts-feed-container"></div>
+    </div>
+
+    <div id="page-Cast-Crew" class="hp-page" style="display:none;">
+      <section class="hp-header-block">
+        <h2>The People Behind the Story</h2>
+        <p>Meet the actors, writers, and crew bringing Heavenly Production's world to life.</p>
+      </section>
+      <div class="hp-cast-grid-showcase" id="cast-grid-container"></div>
+    </div>
+
+    <div id="page-Journal" class="hp-page" style="display:none;">
+      <section class="hp-header-block">
+        <h2>The Journal</h2>
+        <p>News, releases, and reflections from Heavenly Production.</p>
+      </section>
+      <div class="hp-grid-3" id="journal-grid-container"></div>
+    </div>
+
+    <div id="page-Contact" class="hp-page" style="display:none;">
+      <section class="hp-header-block">
+        <h2>Let's Talk</h2>
+        <p>For partnerships, press, licensing, or general inquiries.</p>
+      </section>
+      <div class="hp-detail-layout">
+        <form class="hp-contact-form" id="contact-form">
+          <input type="text" placeholder="Name" required />
+          <input type="email" placeholder="Email" required />
+          <input type="text" placeholder="Subject" required />
+          <textarea rows="5" placeholder="Message" required></textarea>
+          <button type="submit" class="hp-btn hp-btn-primary">Send Message</button>
+        </form>
+        <div class="hp-contact-info">
+          <h3>Direct Contact Information</h3>
+          <p><strong>Email:</strong> hello@heavenlyproduction.co.ke</p>
+          <p><strong>Location:</strong> Nyeri, Kenya</p>
+          <div class="hp-social-icons">
+            <a href="#" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+            <a href="#" aria-label="TikTok">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+            </a>
+            <a href="#" aria-label="X">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="page-Cart" class="hp-page" style="display:none;">
+      <h2>Your Cart</h2>
+      <div id="cart-empty-msg"><p>Your cart is empty.</p></div>
+      <div class="hp-detail-layout" id="cart-content-layout" style="display:none;">
+        <div class="hp-cart-items" id="cart-items-list"></div>
+        <div class="hp-checkout-panel">
+          <h3>Order Summary</h3>
+          <p><strong>Subtotal:</strong> <span id="cart-subtotal">KES 0</span></p>
+          <h4>Payment Method Options</h4>
+          <div class="hp-payment-options">
+            <label><input type="radio" name="pay" checked /> M-Pesa</label>
+            <label><input type="radio" name="pay" /> Card (Visa/Mastercard)</label>
+            <label><input type="radio" name="pay" /> PayPal</label>
+          </div>
+          <button class="hp-btn hp-btn-primary" id="checkout-btn">Complete Purchase</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="page-My-Account" class="hp-page" style="display:none;">
+      <h2>Your Films</h2>
+      <p>Access your purchased streaming collection anytime below.</p>
+      <div id="library-empty-msg"><p>You haven't purchased any films yet.</p></div>
+      <div class="hp-movie-grid-showcase" id="library-grid" style="display:none;"></div>
+    </div>
+
+    <div id="page-Downloads" class="hp-page" style="display:none;">
+      <section class="hp-header-block">
+        <h2>Your Downloads</h2>
+        <p>Stream or download your purchased films to watch anytime, anywhere.</p>
+      </section>
+      <div id="downloads-empty-msg" class="hp-empty-state"><p>You haven't purchased any films yet. <button class="hp-btn hp-btn-primary nav-direct" data-page="Movies">Browse Movies</button></p></div>
+      <div class="hp-downloads-grid" id="downloads-grid" style="display:none;"></div>
+    </div>
+
+    <div id="page-Login" class="hp-page" style="display:none;">
+      <div class="hp-auth-container">
+        <h2>Admin Access</h2>
+        <form id="login-form" class="hp-auth-form">
+          <input type="text" id="username" placeholder="Username" required />
+          <input type="password" id="password" placeholder="Password" required />
+          <button type="submit" class="hp-btn hp-btn-primary">Login</button>
+          <p id="login-error" class="hp-error-msg"></p>
+        </form>
+        <p class="hp-auth-hint">Demo: admin1/admin123 | admin2/admin456 | admin3/admin789</p>
+      </div>
+    </div>
+
+    <div id="page-Admin" class="hp-page" style="display:none;">
+      <div class="hp-admin-header">
+        <h2>Content Management Panel</h2>
+        <button class="hp-btn hp-btn-secondary" id="logout-btn">Logout</button>
+      </div>
+      
+      <div class="hp-admin-tabs">
+        <button class="hp-admin-tab-btn active" data-tab="movies">Upload Movies</button>
+        <button class="hp-admin-tab-btn" data-tab="trailers">Upload Trailers</button>
+        <button class="hp-admin-tab-btn" data-tab="gallery">Upload Gallery</button>
+        <button class="hp-admin-tab-btn" data-tab="founders">Manage Founders</button>
+      </div>
+
+      <div id="admin-movies" class="hp-admin-tab-content">
+        <h3>Add a New Movie</h3>
+        <form id="movie-upload-form" class="hp-admin-form">
+          <input type="text" placeholder="Movie Title" id="movie-title" required />
+          <input type="text" placeholder="Movie Hook" id="movie-hook" required />
+          <textarea placeholder="Synopsis" id="movie-synopsis" required></textarea>
+          <input type="text" placeholder="Genre" id="movie-genre" required />
+          <input type="number" placeholder="Runtime (minutes)" id="movie-runtime" required />
+          <input type="text" placeholder="Language" id="movie-language" required />
+          <input type="number" placeholder="Year" id="movie-year" required />
+          <input type="text" placeholder="Director" id="movie-director" required />
+          <input type="text" placeholder="Cast (comma-separated)" id="movie-cast" required />
+          <input type="number" placeholder="Price (KES)" id="movie-price" required />
+          <input type="text" placeholder="Poster Image URL" id="movie-poster" required />
+          <input type="text" placeholder="Trailer URL" id="movie-trailer" required />
+          <input type="text" id="movie-file" placeholder="Full Movie File/Stream URL" />
+          <button type="submit" class="hp-btn hp-btn-primary">Add Movie</button>
+        </form>
+        <div id="movies-list" class="hp-admin-list"></div>
+      </div>
+
+      <div id="admin-trailers" class="hp-admin-tab-content" style="display:none;">
+        <h3>Add Trailer to Movie</h3>
+        <form id="trailer-upload-form" class="hp-admin-form">
+          <select id="trailer-movie-id" required>
+            <option value="">Select a Movie</option>
+          </select>
+          <input type="text" placeholder="Trailer URL" id="trailer-url" required />
+          <button type="submit" class="hp-btn hp-btn-primary">Update Trailer</button>
+        </form>
+      </div>
+
+      <div id="admin-gallery" class="hp-admin-tab-content" style="display:none;">
+        <h3>Add Gallery Item to Movie</h3>
+        <form id="gallery-upload-form" class="hp-admin-form">
+          <select id="gallery-movie-id" required>
+            <option value="">Select a Movie</option>
+          </select>
+          <input type="text" placeholder="Image/Video URL" id="gallery-url" required />
+          <select id="gallery-type" required>
+            <option value="image">Image</option>
+            <option value="video">Video</option>
+          </select>
+          <button type="submit" class="hp-btn hp-btn-primary">Add to Gallery</button>
+        </form>
+      </div>
+
+      <div id="admin-founders" class="hp-admin-tab-content" style="display:none;">
+        <h3>Manage Founders</h3>
+        <form id="founder-form" class="hp-admin-form">
+          <input type="text" placeholder="Founder Name" id="founder-name" required />
+          <textarea placeholder="Bio" id="founder-bio" required></textarea>
+          <input type="text" placeholder="Photo URL" id="founder-photo" required />
+          <button type="submit" class="hp-btn hp-btn-primary">Add Founder</button>
+        </form>
+        <div id="founders-list" class="hp-admin-list"></div>
+      </div>
+    </div>
+
+    <div id="page-Watch" class="hp-page" style="display:none;">
+      <div class="hp-watch-container">
+        <button class="hp-btn hp-btn-secondary" id="back-from-watch-btn">← Back</button>
+        <h2 id="watch-title"></h2>
+        <div class="hp-video-player-full">
+          <video id="full-movie-player" controls></video>
+        </div>
+        <div class="hp-watch-info">
+          <p id="watch-synopsis"></p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <div id="mobile-nav-menu" class="hp-mobile-nav" style="display: none;">
+    <nav class="hp-mobile-nav-content">
+      <button class="mobile-nav-link" data-page="Home">Home</button>
+      <button class="mobile-nav-link" data-page="About-Us">About Us</button>
+      <button class="mobile-nav-link" data-page="Movies">Movies</button>
+      <button class="mobile-nav-link" data-page="Behind-the-Scenes">Behind the Scenes</button>
+      <button class="mobile-nav-link" data-page="Cast-Crew">Cast & Crew</button>
+      <button class="mobile-nav-link" data-page="Journal">News/Journal</button>
+      <button class="mobile-nav-link" data-page="Contact">Contact</button>
+      <button class="mobile-nav-link" id="mobile-downloads-link" style="display: none;" data-page="Downloads">Downloads</button>
+    </nav>
+  </div>
+
+  <footer class="hp-footer">
+    <div class="hp-footer-content">
+      <div class="hp-footer-brand">
+        <div class="hp-logo-box">
+          <img src="https://picsum.photos/seed/heavenlylogo/50/50" alt="Logo" class="hp-brand-logo" />
+          <div>
+            <h3 class="hp-brand-title">HEAVENLY PRODUCTION</h3>
+            <span class="hp-brand-sub">Stories with a Soul.</span>
+          </div>
+        </div>
+      </div>
+      <div class="hp-footer-links">
+        <span class="nav-direct" data-page="Home">Home</span>
+        <span class="nav-direct" data-page="Movies">Movies</span>
+        <span class="nav-direct" data-page="About-Us">About Us</span>
+        <span class="nav-direct" data-page="Contact">Contact</span>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <div class="hp-social-icons">
+          <a href="#" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+          </a>
+          <a href="#" aria-label="TikTok">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path></svg>
+          </a>
+          <a href="#" aria-label="X">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="hp-footer-bottom">
+      © 2026 Heavenly Production, Nyeri, Kenya.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
